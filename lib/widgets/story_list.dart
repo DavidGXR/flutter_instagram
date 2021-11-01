@@ -10,7 +10,20 @@ class StoryList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(itemBuilder: (context, index) {
+    return ListView.separated(itemBuilder: (context,index) {
+      return StoryTile(imageName: _stories[index].imageName,
+          storyBorderColor: _stories[index].storyBorderColor,
+          username: _stories[index].username);
+    },
+        separatorBuilder: (context, index) {
+          return SizedBox(width: 5.0);
+        },
+        itemCount: this._stories.length,
+        scrollDirection: Axis.horizontal
+    );
+
+
+      ListView.builder(itemBuilder: (context, index) {
       return StoryTile(imageName: _stories[index].imageName,
           storyBorderColor: _stories[index].storyBorderColor,
           username: _stories[index].username);

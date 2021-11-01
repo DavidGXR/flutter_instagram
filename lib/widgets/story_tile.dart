@@ -14,8 +14,8 @@ class StoryTile extends StatelessWidget {
       children: [
         Expanded(
           child: Container(
-            width: 90.0,
-            height: 90.0,
+            width: 80,
+            height: 100,
             decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(
@@ -31,6 +31,7 @@ class StoryTile extends StatelessWidget {
             ),
           ),
         ),
+
         Text(
           username,
           style: TextStyle(

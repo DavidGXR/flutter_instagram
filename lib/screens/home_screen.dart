@@ -52,54 +52,16 @@ class HomeScreen extends StatelessWidget {
           )
         ],
       ),
-      body: Padding(
-        padding: EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Expanded(
-
-              // Story
-              child: Container(
-                child: StoryList(stories: this._stories)
-              )
-            ),
-
-            Padding(
-              padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
-              child: SizedBox(
-                height: 5.0,
-                child: Divider(
-                  color: Colors.grey,
-                ),
-              ),
-            ),
-
-            // Feeds
-            Expanded(
-                child: Container(
-                  child: ListView.builder(itemBuilder: (context, builder) {
-                    return Container(
-                      width: 40.0,
-                      height: 40.0,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10.0),
-                          color: Colors.red
-                      ),
-
-                    );
-                  },
-                    itemCount: 5,
-                    scrollDirection: Axis.vertical,
-                  ),
-                ),
-              flex: 6,
-            ),
-
-
-          ],
-        ),
-      )
+      body: ListView(
+        children: [
+          SizedBox(
+            child: Padding(
+              padding: EdgeInsets.only(left: 5.0, top: 5.0),
+                child: StoryList(stories: this._stories)),
+            height: 100,
+          ),
+        ],
+      ),
     );
   }
 
