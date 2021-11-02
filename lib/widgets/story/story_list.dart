@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_instagram/model/story.dart';
-import 'package:flutter_instagram/widgets/story_tile.dart';
+import 'package:flutter_instagram/widgets/story/story_tile.dart';
 
 class StoryList extends StatelessWidget {
 
@@ -22,15 +22,15 @@ class StoryList extends StatelessWidget {
         scrollDirection: Axis.horizontal
     );
 
-
-      ListView.builder(itemBuilder: (context, index) {
-      return StoryTile(imageName: _stories[index].imageName,
-          storyBorderColor: _stories[index].storyBorderColor,
-          username: _stories[index].username);
-    },
-      itemCount: this._stories.length,
-      scrollDirection: Axis.horizontal,
-    );
-
   }
-}
+}// End of class
+
+
+//   ListView.builder(itemBuilder: (context, index) {
+//   return StoryTile(imageName: _stories[index].imageName,
+//       storyBorderColor: _stories[index].storyBorderColor,
+//       username: _stories[index].username);
+// },
+//   itemCount: this._stories.length,
+//   scrollDirection: Axis.horizontal,
+// );
