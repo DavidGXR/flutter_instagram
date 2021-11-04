@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_instagram/screens/home_screen.dart';
+import 'package:flutter_instagram/screens/splash_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Instagram Clone',
-      home: HomeScreen(),
+      home: SplashScreen(),
     );
   }
 }

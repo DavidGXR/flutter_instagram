@@ -56,8 +56,6 @@ class StoryTile extends StatelessWidget {
                 right: 0,
               )
 
-
-
             ],
           ),
         ),
