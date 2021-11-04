@@ -15,7 +15,7 @@ class StoryTile extends StatelessWidget {
         Expanded(
           child: Container(
             width: 80,
-            height: 100,
+            height: 95,
             decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(
@@ -25,7 +25,7 @@ class StoryTile extends StatelessWidget {
             ),
             child: Center(
               child: CircleAvatar(
-                radius: 34,
+                radius: 33,
                 backgroundImage: AssetImage('images/$imageName'),
               ),
             ),
