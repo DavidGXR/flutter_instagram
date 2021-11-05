@@ -1,14 +1,16 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_instagram/model/post.dart';
+import 'package:flutter_instagram/model/post_data.dart';
 import 'package:flutter_instagram/utilities/constant.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 
 class PostTile extends StatelessWidget {
 
   final Post post;
-  final Function didDoubleTapOnPost;
 
-  PostTile({this.post, this.didDoubleTapOnPost});
+  PostTile({this.post});
 
   double commentOpacity() {
     if (post.totalComment != 0) {
@@ -17,6 +19,8 @@ class PostTile extends StatelessWidget {
       return 0;
     }
   }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -121,7 +125,7 @@ class PostTile extends StatelessWidget {
         GestureDetector(
           onDoubleTap: () {
             //TODO: Update didLike = true and show heart icon for 2 seconds
-            didDoubleTapOnPost(post);
+            Provider.of<PostData>(context, listen: false).didDoubleTapOnPost(post);
           },
           child: Stack(
             alignment: Alignment.center,

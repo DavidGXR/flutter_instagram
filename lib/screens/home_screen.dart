@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_instagram/model/story.dart';
+import 'package:flutter_instagram/model/post_data.dart';
+import 'package:flutter_instagram/model/story_data.dart';
 import 'package:flutter_instagram/utilities/constant.dart';
 import 'package:flutter_instagram/widgets/post/post_list.dart';
 import 'package:flutter_instagram/widgets/story/story_list.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
 
@@ -52,7 +54,11 @@ class HomeScreen extends StatelessWidget {
           SizedBox(
             child: Padding(
                 padding: EdgeInsets.only(left: universalLeftPadding, top: 10.0),
-                child: StoryList()),
+                child: ChangeNotifierProvider<StoryData>(
+                  create: (context) => StoryData(),
+                  child: StoryList(),
+                )
+            ),
             height: 105,
           ),
 
@@ -69,7 +75,10 @@ class HomeScreen extends StatelessWidget {
           ),
 
           // Feeds
-          PostList()
+          ChangeNotifierProvider(
+              create: (context) => PostData(),
+              child: PostList()
+          )
         ],
       ),
 
