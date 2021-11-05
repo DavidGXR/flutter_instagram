@@ -11,7 +11,7 @@ class PostList extends StatefulWidget {
 class _PostListState extends State<PostList> {
 
   List<Post> _posts = [
-    Post(profileImageName: 'cristiano.jpg', username: 'cristiano', location: 'Atlanta, Italy', postImageName: 'nikelogo.jpg', totalLikes: 5, postCaption: 'Best brand ever.', totalComment: 3, didLike: false, didReact: false),
+    Post(profileImageName: 'cristiano.jpg', username: 'cristiano', location: 'Atlanta, Italy', postImageName: 'nikelogo.jpg', totalLikes: 5, postCaption: 'Nike has been one of the greatest brand for me since I first started playing football.', totalComment: 3, didLike: false, didReact: false),
     Post(profileImageName: 'vini.jpg', username: 'vinijr', location: 'Madrid, Spain', postImageName: 'nikelogo.jpg', totalLikes: 5, postCaption: 'Best brand ever.', totalComment: 168, didLike: false, didReact: false),
     Post(profileImageName: 'nikelogo.jpg', username: 'nike', location: 'New York, US', postImageName: 'nikelogo.jpg', totalLikes: 5, postCaption: 'Unleash your potential.', totalComment: 168, didLike: false, didReact: false),
   ];

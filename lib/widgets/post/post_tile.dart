@@ -22,88 +22,96 @@ class PostTile extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Column(
+      mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
 
       children: [
         // User account section
         Padding(
           padding: const EdgeInsets.only(left: universalLeftPadding),
-          child: Row(
+          // Account info
+          child: Container(
+            height: 33.0,
+            width: double.infinity,
+            child: Row(
 
-            children: [
+              mainAxisSize: MainAxisSize.min,
 
-              GestureDetector(
-                onTap: () {
-                  print("Profile pic tapped..!");
-                },
-                child: CircleAvatar(
-                  radius: 20,
-                  backgroundImage: AssetImage('images/${post.profileImageName}'),
+              children: [
+
+                GestureDetector(
+                  onTap: () {
+                    print("Profile pic tapped..!");
+                  },
+                  child: CircleAvatar(
+                    radius: 20,
+                    backgroundImage: AssetImage('images/${post.profileImageName}'),
+                  ),
                 ),
-              ),
 
-              SizedBox(
-                width: 5.0,
-              ),
+                SizedBox(
+                  width: 5.0,
+                ),
 
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
 
-                    GestureDetector(
-                      onTap: () {
-                        print("username tapped..");
-                      },
-                      child: Text(
-                        post.username,
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 13.0,
-                            color: Colors.black
+                      GestureDetector(
+                        onTap: () {
+                          print("username tapped..");
+                        },
+                        child: Text(
+                          post.username,
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 13.0,
+                              color: Colors.black
+                          ),
                         ),
                       ),
+
+                      SizedBox(height: 5.0),
+
+                      GestureDetector(
+                        onTap: () {
+                          print('location tapped...');
+                        },
+                        child: Text(
+                          post.location,
+                          style: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 11.0
+                          ),
+                        ),
+                      )
+
+                    ],
+                  ),
+                ),
+
+                Spacer(),
+
+                SizedBox(
+                  height: 15.0,
+                  width: 25.0,
+                  child: TextButton(
+                    child: Icon(
+                      FontAwesomeIcons.ellipsisH,
+                      color: Colors.black,
+                      size: 15.0,
+                    ),
+                    style: TextButton.styleFrom(
+                        minimumSize: Size(15.0, 15.0),
+                        padding: EdgeInsets.only(right: 10.0)
                     ),
 
-                    SizedBox(height: 5.0),
-
-                    GestureDetector(
-                      onTap: () {
-                        print('location tapped...');
-                      },
-                      child: Text(
-                        post.location,
-                        style: TextStyle(
-                            color: Colors.grey,
-                            fontSize: 11.0
-                        ),
-                      ),
-                    )
-
-                  ],
-                ),
-              ),
-
-              Spacer(),
-
-              SizedBox(
-                height: 15.0,
-                width: 25.0,
-                child: TextButton(
-                  child: Icon(
-                    FontAwesomeIcons.ellipsisH,
-                    color: Colors.black,
-                    size: 15.0,
                   ),
-                  style: TextButton.styleFrom(
-                      minimumSize: Size(15.0, 15.0),
-                      padding: EdgeInsets.only(right: 10.0)
-                  ),
-
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
 
@@ -112,7 +120,6 @@ class PostTile extends StatelessWidget {
         // Post's image
         GestureDetector(
           onDoubleTap: () {
-            print('liked image...!');
             //TODO: Update didLike = true and show heart icon for 2 seconds
             didDoubleTapOnPost(post);
           },
@@ -257,30 +264,30 @@ class PostTile extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(left: universalLeftPadding),
           child: SizedBox(
-            height: 13.0,
-            child: Row(
-              children: [
+            width: double.infinity,
+            child: RichText(
+              text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: post.username,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black
+                      ),
+                    ),
 
-                Text(
-                  post.username,
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 13.0,
-                      fontWeight: FontWeight.bold
-                  ),
-                ),
+                    TextSpan(
+                      text: '  ${post.postCaption}',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.normal
+                      ),
+                    ),
 
-                SizedBox(width: 7.0),
-
-                Text(
-                  post.postCaption,
-                  style: TextStyle(
-                      fontSize: 13.0
-                  ),
-                )
-
-              ],
+                  ]
+              ),
             ),
+
           ),
         ),
 
