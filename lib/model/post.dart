@@ -1,11 +1,11 @@
 class Post {
   String profileImageName;
   String username;
-  String location;
+  String location; //NO
   String postImageName;
   int totalLikes;
   String postCaption;
-  int totalComment;
+  int totalComment; //NO
   bool didLike;
   bool didReact;
 
@@ -24,3 +24,4 @@ class Post {
   }
 
 }// End of class
+

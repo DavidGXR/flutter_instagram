@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_instagram/model/post.dart';
 import 'package:flutter_instagram/model/post_data.dart';
 import 'package:flutter_instagram/model/story_data.dart';
 import 'package:flutter_instagram/utilities/constant.dart';
@@ -8,6 +9,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
+
+  final List<Post> _posts;
+
+  HomeScreen({List<Post> posts}):this._posts = posts;
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +81,7 @@ class HomeScreen extends StatelessWidget {
 
           // Feeds
           ChangeNotifierProvider(
-              create: (context) => PostData(),
+              create: (context) => PostData(posts: this._posts),
               child: PostList()
           )
         ],

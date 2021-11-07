@@ -49,7 +49,7 @@ class PostTile extends StatelessWidget {
                   },
                   child: CircleAvatar(
                     radius: 20,
-                    backgroundImage: AssetImage('images/${post.profileImageName}'),
+                    backgroundImage: NetworkImage(post.profileImageName),
                   ),
                 ),
 
@@ -131,7 +131,7 @@ class PostTile extends StatelessWidget {
             alignment: Alignment.center,
             children: [
               Image(
-                image: AssetImage('images/${post.postImageName}'),
+                image: NetworkImage(post.postImageName),
                 height: MediaQuery.of(context).size.height-450,
                 fit: BoxFit.fitHeight,
               ),
