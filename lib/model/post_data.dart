@@ -1,8 +1,6 @@
 import 'dart:collection';
 import 'package:flutter/cupertino.dart';
 import 'post.dart';
-import 'package:flutter_instagram/utilities/constant.dart';
-import 'package:http/http.dart';
 
 class PostData extends ChangeNotifier {
 

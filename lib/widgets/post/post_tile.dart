@@ -1,4 +1,4 @@
-import 'package:flutter/gestures.dart';
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_instagram/model/post.dart';
 import 'package:flutter_instagram/model/post_data.dart';
@@ -20,8 +20,6 @@ class PostTile extends StatelessWidget {
     }
   }
 
-
-
   @override
   Widget build(BuildContext context) {
 
@@ -35,7 +33,7 @@ class PostTile extends StatelessWidget {
           padding: const EdgeInsets.only(left: universalLeftPadding),
           // Account info
           child: Container(
-            height: 33.0,
+            height: Platform.isAndroid ? 33.0:35.0,
             width: double.infinity,
             child: Row(
 
